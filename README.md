@@ -31,11 +31,11 @@ for PHP I wanted to add them for other developers using ACF without the Wordpres
 
   * *Wordpress Related Fields*
 
-    * [Page Link](#page-link) (TODO)
-    * [Taxonomy](#taxonomy) (TODO)
-    * [User](#user) (TODO)
-    * [Relationship](#relationship) (TODO)
-    * [Post Object](#post-object) (TODO)
+    * [Page Link](#page-link)
+    * [Taxonomy](#taxonomy)
+    * [User](#user)
+    * [Relationship](#relationship)
+    * [Post Object](#post-object)
 
   * *Data Fields*
 
@@ -426,6 +426,7 @@ A select dropdown field field.
 | ui            | `<boolean>`  | Use the ACF UI               |
 | ajax    | `<boolean>`   | Use AJAX to load the select content        |
 | return_format   | `value|label|array`   | Show the text offside the UI button |
+| multiple   | `<boolean>`   | Allow more than one input |
 | choices   | `<array>` | Array containing the choices |
 
 #### Example
@@ -526,3 +527,191 @@ A file field for file uploads.
   ]
 ?>
 ```
+
+
+---
+
+
+
+## Page Link
+
+Allows you to link a page to this field.
+
+| name           | options     | description                                |
+| :------------- | ----------- | ------------------------------------------ |
+| post_type      | `<array>`   | An Array containing the allowed post types |
+| taxonomy       | `<array>`   | An Array containing the allowed taxonomies |
+| allow_null     | `<boolean>` | Allow null as a value                      |
+| multiple       | `<boolean>` | Allow more than one input                  |
+| allow_archives | `<boolean>` | Allow pages from the archives              |
+
+#### Example
+
+```php
+<?php
+  [
+    'name' => 'my_field',
+    'key' => 'my_field',
+    'type' => 'page_link',
+	'post_type' => array('post', 'page'),
+    'taxonomy' => array(),
+    'allow_null' => 0,
+    'multiple' => 1,
+    'allow_archives' => 1
+  ]
+?>
+```
+
+
+
+---
+
+
+
+## Taxonomy
+
+Allows you to link a taxonomy to this field.
+
+| name           | options     | description                                |
+| :------------- | ----------- | ------------------------------------------ |
+| taxonomy       | `<string>`  | A taxonomy to be selected for this field 	|
+| field_type     | `checkbox|select|radio` | Fieldtype for this field 		|
+| allow_null     | `<boolean>` | Allow null as a value                      |
+| multiple       | `<boolean>` | Allow more than one input                  |
+| return_format | `object|id` | Return Format for this field              |
+| add_term | `<boolean>` | Allow to add taxonomies              |
+| save_terms | `<boolean>` | Allow to save taxonomies              |
+| load_terms | `<boolean>` | Allow to load taxonomies              |
+
+
+#### Example
+
+```php
+<?php
+  [
+    'name' => 'my_field',
+    'key' => 'my_field',
+    'type' => 'taxonomy',
+    'taxonomy' => 'category',
+    'allow_null' => 0,
+    'multiple' => 1,
+    'return_format' => 'object',
+    'add_term' => 0,
+    'save_terms' => 0,
+    'load_terms' => 0
+  ]
+?>
+```
+
+
+
+---
+
+
+
+## User
+
+Allows you to link a user to this field.
+
+| name       | options     | description                      |
+| :--------- | ----------- | -------------------------------- |
+| role       | `<string>`  | User roles which can be selected |
+| allow_null | `<boolean>` | Allow null as a value            |
+| multiple   | `<boolean>` | Allow more than one input        |
+
+#### Example
+
+```php
+<?php
+  [
+    'name' => 'my_field',
+    'key' => 'my_field',
+    'type' => 'user',
+	'role' => 'administrator',
+    'allow_null' => 0,
+    'multiple' => 1
+  ]
+?>
+```
+
+
+
+---
+
+
+
+## Relationship
+
+Allows you to create relationships with this field.
+
+| name          | options   | description                 |
+| :------------ | --------- | --------------------------- |
+| post_type     | `<array>` | Array of post types allowed |
+| taxonomy      | `<array>` | Array of taxonomies allowed |
+| min           | `<int>`   | Minimum to select           |
+| max           | `<int>`   | Maximum to select           |
+| filters       | `<array>` | Filters Taxonomies          |
+| elements      | `<array>` | Selected will be displayed in results |
+| return_format | `object|id` | Return format for this field  |
+
+#### Example
+
+```php
+<?php
+  [
+    'name' => 'my_field',
+    'key' => 'my_field',
+    'type' => 'relationship',
+	'post_type' => array('post', 'page'),
+    'taxonomy' => array(),
+	'min' => 0,
+    'max' => 0,
+    'filters' => array('search', 'post_type', 'taxonomy'),
+    'elements' => array(
+    	'featured_image' => 'Featured Image'
+    ),
+    'return_format' => 'object'
+  ]
+?>
+```
+
+
+
+---
+
+
+
+## Post Object
+
+Allows you to connect Post Objects with this field.
+
+| name          | options   | description                 |
+| :------------ | --------- | --------------------------- |
+| post_type     | `<array>` | Array of post types allowed |
+| taxonomy      | `<array>` | Array of taxonomies allowed |
+| allow_null | `<boolean>`   | Allow null as a value |
+| multiple | `<boolean>`   | Allow multiple selections |
+| ui      | `<boolean>` | Use the ACF UI |
+| return_format | `object|id` | Return format for this field  |
+
+#### Example
+
+```php
+<?php
+  [
+    'name' => 'my_field',
+    'key' => 'my_field',
+    'type' => 'post_object',
+	'post_type' => array('post', 'page'),
+    'taxonomy' => array(),
+	'allow_null' => 0,
+    'multiple' => 0,
+    'ui' => 1,
+    'return_format' => 'object'
+  ]
+?>
+```
+
+
+
+---
