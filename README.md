@@ -1,12 +1,14 @@
 # ACF Unofficial API Field Documentation
 
-This documentation will cover the ACF fields which are shipped with ACF and ACF Pro. Since the official documentation is missing field definitions
-for PHP I wanted to add them for other developers using ACF without the Wordpress UI.
+This documentation will cover the ACF fields which are shipped with ACF and ACF Pro. Since the official documentation is missing field definitions for PHP I wanted to add them for other developers using ACF without the Wordpress UI.
 
-
+All fields and the definitions where read-out hand by hand from the [ACF Pro Repository](https://github.com/wp-premium/advanced-custom-fields-pro/)
 
 ## Table of Contents
 
+* **[Required Field Values](#required-field-values)**
+* **[General Field Values](#general-field-values)**
+* **[Conditional Logic](#conditional-logic)**
 * **Fields**
 	* **General Fields**
       * [General Options](#general-options)
@@ -41,6 +43,59 @@ for PHP I wanted to add them for other developers using ACF without the Wordpres
       * [Message](#message) (TODO)
       * [Output](#output) (TODO)
       * [Tab](#tab) (TODO)
+
+---
+
+## Required Field Values
+
+The following values are required by **all fields**.
+
+| name  | options    | description                                          |
+| ----- | ---------- | ---------------------------------------------------- |
+| label | `<string>` | The text the user will see in the backend            |
+| name  | `<string>` | The internal name for acf `get_field()` requests     |
+| key   | `<string>` | The internal key of the acf. **Has to be unique**    |
+| type  | `<string>` | The type of the field, for example `text` or `image` |
+
+---
+
+## General Field Values
+
+The following values can be used on every field but are **not required**.
+
+| name              | options     | description                                                               |
+| ----------------- | ----------- | ------------------------------------------------------------------------- |
+| required          | `<boolean>` | Set the field to required                                                 |
+| instructions      | `<string>`  | Instructions which are above the field which can be used for instructions |
+| wrapper           | `<array>`   | An array containing `width`, `class` and `id` for custom styling          |
+| default_value     | `*`         | Value which is going to be set if nothing is filled out                   |
+| conditional_logic | `<array>`   | Conditional Logic Setup Array, [Instructions here](#conditional-logic)    |
+
+---
+
+## Conditional Logic
+
+You can hide fields depending on other fields. For this you need conditional arrays. The conditional array is using keys and operators to check if a field is set or not.
+
+```php
+<?php
+
+[
+	'label' => 'My Field',
+	'name' => 'my_field',
+    'key' => 'my_field',
+    'type' => 'true_false',
+    'conditional_logic' => array(
+    	array(
+        	'field' => 'my_field',
+            'operator' => '=='
+            'value' => 1
+        )
+    )
+]
+
+?>
+```
 
 ---
 
