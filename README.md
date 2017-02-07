@@ -8,51 +8,39 @@ for PHP I wanted to add them for other developers using ACF without the Wordpres
 ## Table of Contents
 
 * **Fields**
-
-  * *General Fields*
-
-    * [General Options](#general-options)
-    * [Text](#text)
-    * [Textarea](#textarea)
-    * [Number](#number)
-    * [E-Mail](#e-mail)
-    * [URL](#url)
-    * [Password](#password)
-    * [WYSIWYG](#wysiwyg)
-    * [Checkbox](#checkbox)
-    * [Radio](#radio)
-    * [True False](#true-false)
-    * [Select](#select)
-
-  * *File Upload Fields*
-
-    * [Image](#image)
-    * [File](#file)
-
-  * *Wordpress Related Fields*
-
-    * [Page Link](#page-link)
-    * [Taxonomy](#taxonomy)
-    * [User](#user)
-    * [Relationship](#relationship)
-    * [Post Object](#post-object)
-
-  * *Data Fields*
-
-    * [Color Picker](#color-picker) (TODO)
-    * [Date Picker](#date-picker) (TODO)
-    * [Date Time Picker](#date-time-picker) (TODO)
-    * [Google Map](#google-map) (TODO)
-    * [Oembed](#oembed) (TODO)
-    * [Time Picker](#time-picker) (TODO)
-
-  * *Structure Fields*
-
-    * [Message](#message) (TODO)
-    * [Output](#output) (TODO)
-    * [Tab](#tab) (TODO)
-
-    ​
+	* **General Fields**
+      * [General Options](#general-options)
+      * [Text](#text)
+      * [Textarea](#textarea)
+      * [Number](#number)
+      * [E-Mail](#e-mail)
+      * [URL](#url)
+      * [Password](#password)
+      * [WYSIWYG](#wysiwyg)
+      * [Checkbox](#checkbox)
+      * [Radio](#radio)
+      * [True False](#true-false)
+      * [Select](#select)
+    * **File Upload Fields**
+      * [Image](#image)
+      * [File](#file)
+	* **Wordpress Related Fields**
+      * [Page Link](#page-link)
+      * [Taxonomy](#taxonomy)
+      * [User](#user)
+      * [Relationship](#relationship)
+      * [Post Object](#post-object)
+    * **Data Fields**
+      * [Color Picker](#color-picker) (TODO)
+      * [Date Picker](#date-picker) (TODO)
+      * [Date Time Picker](#date-time-picker) (TODO)
+      * [Google Map](#google-map) (TODO)
+      * [Oembed](#oembed) (TODO)
+      * [Time Picker](#time-picker) (TODO)
+	* **Structure Fields**
+      * [Message](#message) (TODO)
+      * [Output](#output) (TODO)
+      * [Tab](#tab) (TODO)
 
 ---
 
