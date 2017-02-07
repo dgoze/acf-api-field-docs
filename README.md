@@ -33,15 +33,15 @@ All fields and the definitions where read-out hand by hand from the [ACF Pro Rep
       * [Relationship](#relationship)
       * [Post Object](#post-object)
     * **Data Fields**
-      * [Color Picker](#color-picker) (TODO)
-      * [Date Picker](#date-picker) (TODO)
-      * [Date Time Picker](#date-time-picker) (TODO)
-      * [Google Map](#google-map) (TODO)
-      * [Oembed](#oembed) (TODO)
-      * [Time Picker](#time-picker) (TODO)
+      * [Color Picker](#color-picker)
+      * [Date Picker](#date-picker)
+      * [Date Time Picker](#date-time-picker)
+      * [Google Map](#google-map)
+      * [Oembed](#oembed)
+      * [Time Picker](#time-picker)
 	* **Structure Fields**
-      * [Message](#message) (TODO)
-      * [Output](#output) (TODO)
+      * [Message](#message)
+      * [Output](#output)
       * [Tab](#tab) (TODO)
 
 ---
@@ -758,3 +758,268 @@ Allows you to connect Post Objects with this field.
 
 
 ---
+
+
+
+## Color Picker
+
+A color picker which returns hexcodes
+
+| name          | options    | description                      |
+| :------------ | ---------- | -------------------------------- |
+| default_value | `<string>` | The default value for this field |
+
+#### Example
+
+```php
+<?php
+  [
+    'name' => 'my_field',
+    'key' => 'my_field',
+    'type' => 'color_picker',
+    'default_value' => '#ffffff'
+  ]
+?>
+```
+
+
+
+---
+
+
+
+## Date Picker
+
+A date picker which returns date formats
+
+| name           | options    | description                                     |
+| :------------- | ---------- | ----------------------------------------------- |
+| display_format | `<string>` | Display format of the date                      |
+| return_format  | `<string>` | The returned format of the date                 |
+| first_day      | `<int>`    | The day number of the first day in the calendar |
+
+#### Example
+
+```php
+<?php
+  [
+    'name' => 'my_field',
+    'key' => 'my_field',
+    'type' => 'date_picker',
+    'display_format' => 'd.m.Y',
+    'return_format' => 'Y-m-d',
+    'first_day' => 1
+  ]
+?>
+```
+
+
+
+---
+
+
+
+## Date Time Picker
+
+A date time picker which returns date formats
+
+| name           | options    | description                                     |
+| :------------- | ---------- | ----------------------------------------------- |
+| display_format | `<string>` | Display format of the date                      |
+| return_format  | `<string>` | The returned format of the date                 |
+| first_day      | `<int>`    | The day number of the first day in the calendar |
+
+#### Example
+
+```php
+<?php
+  [
+    'name' => 'my_field',
+    'key' => 'my_field',
+    'type' => 'date_time_picker',
+    'display_format' => 'd.m.Y H:i:s',
+    'return_format' => 'Y-m-d g:i a',
+    'first_day' => 1
+  ]
+?>
+```
+
+
+
+---
+
+
+
+## Google Map
+
+A google map field which returns lat, lang and the address
+
+| name       | options    | description           |
+| :--------- | ---------- | --------------------- |
+| height     | `<string>` | Height in px          |
+| center_lat | `<string>` | The start latitude    |
+| center_lng | `<string>` | The start longitude   |
+| zoom       | `<string>` | The google zoom level |
+
+#### Example
+
+```php
+<?php
+  [
+    'name' => 'my_field',
+    'key' => 'my_field',
+    'type' => 'google_map',
+    'height' => '400',
+    'center_lat' => '-37.81411',
+    'center_lng' => '144.96328',
+    'zoom' => '14'
+  ]
+?>
+```
+
+
+---
+
+
+
+## Oembed
+
+A oembed field which returns an iframe
+
+| name   | options    | description  |
+| :----- | ---------- | ------------ |
+| height | `<string>` | Height in px |
+| width  | `<string>` | Width in px  |
+
+#### Example
+
+```php
+<?php
+  [
+    'name' => 'my_field',
+    'key' => 'my_field',
+    'type' => 'oembed',
+    'height' => '640',
+    'width' => '390'
+  ]
+?>
+```
+
+
+---
+
+
+
+## Time Picker
+
+A timepicker field which returns an time format
+
+| name           | options    | description                                     |
+| :------------- | ---------- | ----------------------------------------------- |
+| display_format | `<string>` | Display format of the time                      |
+| return_format  | `<string>` | The returned format of the time                 |
+
+#### Example
+
+```php
+<?php
+  [
+    'name' => 'my_field',
+    'key' => 'my_field',
+    'type' => 'time_picker',
+	'display_format' => 'H:i:s',
+    'return_format' => 'H:i:s'
+  ]
+?>
+```
+
+
+---
+
+
+
+## Message
+
+Will show a message in the backend
+
+| name           | options    | description                    |
+| :------------- | ---------- | -------------------------------- |
+| message | `<string>` | The message of the string |
+| esc_html  | `<boolean>` | Should HTML be escaped |
+| new_lines  | `wpautop|br|<none>` | What should happen with breaks |
+
+#### Example
+
+```php
+<?php
+  [
+    'name' => 'my_field',
+    'key' => 'my_field',
+    'type' => 'message',
+	'message' => 'Hello World',
+    'esc_html' => 1,
+    'new_lines' => 'br'
+  ]
+?>
+```
+
+
+---
+
+
+
+## Output
+
+Will show a message in the backend
+
+| name | options    | description        |
+| :--- | ---------- | ------------------ |
+| html | `<string>` | HTML of the output |
+
+#### Example
+
+```php
+<?php
+  [
+    'name' => 'my_field',
+    'key' => 'my_field',
+    'type' => 'output',
+    'html' => '<p>Hello World</p>'
+  ]
+?>
+```
+
+
+---
+
+
+
+## Tab
+
+Will group everything below in a tab
+
+| name | options    | description        |
+| :--- | ---------- | ------------------ |
+| placement | `top|bottom` | Placement of the Tab |
+| endpoint | `<boolean>` | set this to the last tab |
+
+#### Example
+
+```php
+<?php
+  [
+    'name' => 'my_field',
+    'key' => 'my_field',
+    'type' => 'tab',
+    'placement' => 'top',
+    'endpoint' => 0
+  ]
+?>
+```
+
+
+---
+
+## Contribution
+
+If you want to keep this up to date, send me a pull request with your change and a reference to the ACF repository change.
